@@ -97,10 +97,55 @@
     <Filter Include="Resource Files\example\zip">
       <UniqueIdentifier>{81d8d80c-f0ce-492f-8fee-c5502c31bc0e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Sample">
+      <UniqueIdentifier>{0149190d-a693-4c0a-bc7d-07fd50e302fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sample">
+      <UniqueIdentifier>{5854759a-7f36-4e55-ba40-0e8de90ea340}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Framework">
+      <UniqueIdentifier>{8f04b65d-14a8-4871-93bd-4b7a6b13a519}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Framework\UseCase">
+      <UniqueIdentifier>{83b98883-e399-4059-998d-16274e931172}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Framework\ViewModel">
+      <UniqueIdentifier>{c1f685d1-8a49-473d-aa98-39d9cfd5a751}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Framework\View">
+      <UniqueIdentifier>{a6a12e20-cdc7-46a4-817d-64ea3293b185}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Framework\Model">
+      <UniqueIdentifier>{4db09b30-ed46-40cb-bfc2-a5d1e3d88860}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sample\View">
+      <UniqueIdentifier>{ce255695-21f4-4aa1-8326-cf1defd06a38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ItemTemplate">
+      <UniqueIdentifier>{ff1be19f-9383-497c-9b56-b78b37fa1367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Framework">
+      <UniqueIdentifier>{98deef39-d132-4326-b6b0-9ee8ca454053}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ItemTemplate">
+      <UniqueIdentifier>{7bb2f3e1-cc8f-4791-823a-610f79471eb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sample\View">
+      <UniqueIdentifier>{7715da44-9855-455c-bd59-b468c5ad168f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewConcrete.cpp">
+      <Filter>Source Files\ItemTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewModelConcrete.cpp">
+      <Filter>Source Files\ItemTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="TestView.cpp">
+      <Filter>Source Files\Sample\View</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -374,5 +419,25 @@
     <Xml Include="App\example\config\config.xml">
       <Filter>Resource Files\example\config</Filter>
     </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IViewModel.h">
+      <Filter>Header Files\Framework\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="IView.h">
+      <Filter>Header Files\Framework\View</Filter>
+    </ClInclude>
+    <ClInclude Include="IUseCase.h">
+      <Filter>Header Files\Framework\UseCase</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewConcrete.h">
+      <Filter>Header Files\ItemTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewModelConcrete.h">
+      <Filter>Header Files\ItemTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="TestView.h">
+      <Filter>Header Files\Sample\View</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
