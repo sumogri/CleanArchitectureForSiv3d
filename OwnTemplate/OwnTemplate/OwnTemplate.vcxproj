@@ -108,11 +108,17 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="TestView.cpp">
+    <ClCompile Include="DirectoryWatchView.cpp">
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="DirectoryWatchViewModel.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ShaderBordView.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ShaderBordViewModel.cpp" />
     <ClCompile Include="ViewConcrete.cpp" />
     <ClCompile Include="ViewModelConcrete.cpp" />
   </ItemGroup>
@@ -241,13 +247,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IUseCase.h" />
-    <ClInclude Include="IView.h" />
-    <ClInclude Include="IViewModel.h" />
-    <ClInclude Include="TestView.h">
+    <ClInclude Include="DirectoryWatchView.h">
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="DirectoryWatchViewModel.h" />
+    <ClInclude Include="IConstantBuffer.h" />
+    <ClInclude Include="ItaPoly.h" />
+    <ClInclude Include="IUseCase.h" />
+    <ClInclude Include="IView.h" />
+    <ClInclude Include="IViewModel.h" />
+    <ClInclude Include="ShaderBordView.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="ShaderBordViewModel.h" />
     <ClInclude Include="ViewConcrete.h" />
     <ClInclude Include="ViewModelConcrete.h" />
   </ItemGroup>

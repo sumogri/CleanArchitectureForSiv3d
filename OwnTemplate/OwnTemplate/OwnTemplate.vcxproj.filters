@@ -133,6 +133,21 @@
     <Filter Include="Source Files\Sample\View">
       <UniqueIdentifier>{7715da44-9855-455c-bd59-b468c5ad168f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Sample\ViewModel">
+      <UniqueIdentifier>{6b72d780-795a-4ab4-a189-b9f6766cacf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sample\ViewModel">
+      <UniqueIdentifier>{d32952ef-1a86-49da-a8ec-90beda16f909}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sample\Model">
+      <UniqueIdentifier>{edefdd9a-f198-47e7-b32b-de129387bdf0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sample\Model">
+      <UniqueIdentifier>{5de91c34-f9a7-48d0-841a-021f47329448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sample\Model\ConstantBuffers">
+      <UniqueIdentifier>{d31bcf09-5d79-4806-ab18-6a8121456d40}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -144,8 +159,17 @@
     <ClCompile Include="ViewModelConcrete.cpp">
       <Filter>Source Files\ItemTemplate</Filter>
     </ClCompile>
-    <ClCompile Include="TestView.cpp">
+    <ClCompile Include="ShaderBordViewModel.cpp">
+      <Filter>Source Files\Sample\ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderBordView.cpp">
       <Filter>Source Files\Sample\View</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectoryWatchView.cpp">
+      <Filter>Source Files\Sample\View</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectoryWatchViewModel.cpp">
+      <Filter>Source Files\Sample\ViewModel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -436,8 +460,23 @@
     <ClInclude Include="ViewModelConcrete.h">
       <Filter>Header Files\ItemTemplate</Filter>
     </ClInclude>
-    <ClInclude Include="TestView.h">
+    <ClInclude Include="ShaderBordView.h">
       <Filter>Header Files\Sample\View</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderBordViewModel.h">
+      <Filter>Header Files\Sample\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="IConstantBuffer.h">
+      <Filter>Header Files\Sample\Model\ConstantBuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="ItaPoly.h">
+      <Filter>Header Files\Sample\Model\ConstantBuffers</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryWatchView.h">
+      <Filter>Header Files\Sample\View</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectoryWatchViewModel.h">
+      <Filter>Header Files\Sample\ViewModel</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
