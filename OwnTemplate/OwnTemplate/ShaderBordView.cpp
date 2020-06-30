@@ -12,7 +12,8 @@ void ShaderBordView::Update() {
 }
 
 void ShaderBordView::Draw() {
-    {
+
+    try{
         // 定数バッファを GPU に設定
         m_ViewModel->SetConstantBufferToGPU();
 
@@ -21,5 +22,8 @@ void ShaderBordView::Draw() {
 
         // 画面を覆うテクスチャを描く
         Scene::Rect()(m_ViewModel->GetTexture()).draw();
+    }
+    catch (Error e) {
+        Print << e.what();
     }
 }

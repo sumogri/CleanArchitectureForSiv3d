@@ -92,9 +92,13 @@ float4 PS(PSInput input) : SV_TARGET
 	}*/
 	
 	float speed = 0.05;
-	if (input.uv.x + input.uv.y <= speed * g_time)
+    if ( (1 - input.uv.y)  < sin((input.uv.x * 3.14 * 5 + g_time) % 3.14) / 6
+		|| (1 - input.uv.y) < sin((input.uv.x * 3.14 * 5 + (g_time + 2)) % 3.14) / 6
+		|| (1 - input.uv.y) < sin((input.uv.x * 3.14 * 5 + (g_time + 1)) % 3.14) / 6
+		|| (1 - input.uv.y) < sin((input.uv.x * 3.14 * 5 + (g_time + 2) * 2) % 3.14) / 6
+		|| (1 - input.uv.y) < 0.05)
 	{
-		texColor = float4(0, 0, 0, 1);	
+		texColor = float4(1, 1, 1, 1);	
 	}	
 	
 	return texColor;

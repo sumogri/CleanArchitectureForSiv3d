@@ -5,6 +5,7 @@
 #include "DirectoryWatchView.h"
 #include "DirectoryWatchViewModel.h"
 
+#if _DEBUG
 void Main() {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
@@ -30,8 +31,9 @@ void Main() {
         directoryWatcher.Update();
     }
 }
+#endif
 
-/*
+#if !_DEBUG
 // 外周の枠の頂点リストを作成
 Array<Vec2> CreateFrame(const Vec2& leftAnchor, const Vec2& rightAnchor)
 {
@@ -130,8 +132,29 @@ void Main()
     // 2D カメラ
     const Camera2D camera(Vec2(0, -8), 24.0);
 
+    //背景
+    ShaderBordViewModel vm;
+    ShaderBordView v(&vm);
+
+    DirectoryWatchViewModel directoryWatchVM;
+    DirectoryWatchView  directoryWatcher(&directoryWatchVM);
+
+    directoryWatchVM.SetWatchingDirectory(FileSystem::ParentPath(vm.GetFilePath()));
+    directoryWatchVM.AddOnAdded(
+        vm.GetFilePath(),
+        [&vm]() {
+            vm.Reload();
+        });
+
+    v.Start();
+
+
     while (System::Update())
     {
+        v.Update();
+        v.Draw();
+
+        directoryWatcher.Update();
 
         /////////////////////////////////////////
         //
@@ -228,4 +251,4 @@ void Main()
     }
 
 }
-*/
+#endif
