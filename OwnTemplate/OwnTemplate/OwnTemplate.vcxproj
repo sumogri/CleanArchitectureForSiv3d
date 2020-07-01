@@ -257,6 +257,7 @@
     <ClInclude Include="IUseCase.h" />
     <ClInclude Include="IView.h" />
     <ClInclude Include="IViewModel.h" />
+    <ClInclude Include="PixelShaderValue.h" />
     <ClInclude Include="ShaderBordView.h">
       <SubType>
       </SubType>

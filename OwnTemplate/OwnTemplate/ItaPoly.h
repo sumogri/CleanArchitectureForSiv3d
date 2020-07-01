@@ -7,7 +7,7 @@
 #include <Siv3D/Vector3D.hpp>
 
 // 定数バッファ
-class ItaPoly : IConstantBuffer
+class ItaPoly : public IConstantBuffer
 {
 public:
 	s3d::Float2 resolution;

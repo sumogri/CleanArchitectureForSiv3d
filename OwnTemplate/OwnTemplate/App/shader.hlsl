@@ -35,71 +35,20 @@ struct PSInput
 
 float4 PS(PSInput input) : SV_TARGET
 {
-	/*
-	//RGBシフト
-	float2 ra = g_texture0.Sample(g_sampler0, input.uv + float2(0, 0.0)).ra;
-	float2 ga = g_texture0.Sample(g_sampler0, input.uv).ga;
-	float2 ba = g_texture0.Sample(g_sampler0, input.uv + float2(0, 0.0)).ba;
-
-	float a = (ra.y + ga.y + ba.y) / 3;
-	float4 texColor = float4(ra.x, ga.x, ba.x, a);
-
-	return (texColor * input.color) + g_colorAdd;
-	*/
-
-	/*
-	// 時間で対角線動かす
-	float4 texColor = float4(1,1,1,1);
-	float speed = 0.01;
-	if(input.uv.x + input.uv.y <= speed * g_time){
-		texColor = float4(0,0,0,1);
-	}	
-	return texColor;
-	*/
-
-	//色混ぜ
-	//return float4(1,0,0,0.5) + g_texture0.Sample(g_sampler0, input.uv);
-
-	// 円
-	/*
-	float4 texColor = float4(0.5,0.5,0.5,0);
-	float2 center = float2(400,300);
-	float2 dist = input.position.xy - center;
-	
-	if (length(dist) < 200){
-		texColor = float4(0,0,0,1);
-	}	
-	return texColor;	
-	*/
-	float4 baseColor = float4(0.5, 0.5, 0.5, 0);
+	float4 baseColor = float4(0.2, 0.3, 0.5, 1);
 	float4 texColor = baseColor; //実際の描画色
 
-	//たまを降らす
-	/*
-	float4 borlColor = float4(1, 1, 1, 1);
-	float2 centerRoot = float2(100, 10);
-	for (int i = 0; i < 10; i++)
-	{
-		float2 center = centerRoot + float2(100 * i , 0);
-		center += float2(0, 100) * g_time % 600;
-		float2 dist = input.position.xy - center;
-		float radius = 10;
-	
-		if (length(dist) < radius)
-		{
-			texColor = borlColor;
-		}
-	}*/
-	
 	float speed = 0.05;
-    if ( (1 - input.uv.y)  < sin((input.uv.x * 3.14 * 5 + g_time) % 3.14) / 6
-		|| (1 - input.uv.y) < sin((input.uv.x * 3.14 * 5 + (g_time + 2)) % 3.14) / 6
-		|| (1 - input.uv.y) < sin((input.uv.x * 3.14 * 5 + (g_time + 1)) % 3.14) / 6
-		|| (1 - input.uv.y) < sin((input.uv.x * 3.14 * 5 + (g_time + 2) * 2) % 3.14) / 6
-		|| (1 - input.uv.y) < 0.05)
+    if ((1 - input.uv.y) < sin((input.uv.x * 3.14 * 5 + g_time) % 3.14) / 11
+		|| (1 - input.uv.y) < sin((input.uv.x * 3.14 * 5 + (g_time + 2)) % 3.14) / 11
+		|| (1 - input.uv.y) < sin((input.uv.x * 3.14 * 5 + (g_time + 1)) % 3.14) / 11)
 	{
-		texColor = float4(1, 1, 1, 1);	
-	}	
+		texColor = float4(0.95, 0.95, 0.95, 1);	
+	}
+    else if ((1 - input.uv.y) < sin((input.uv.x * 3.14 * 5 + (g_time + 2) * 2) % 3.14) / 10.5)
+    {
+        texColor = float4(0.8, 0.8, 0.8, 1);		
+    }
 	
-	return texColor;
+    return texColor;
 }

@@ -478,5 +478,8 @@
     <ClInclude Include="DirectoryWatchViewModel.h">
       <Filter>Header Files\Sample\ViewModel</Filter>
     </ClInclude>
+    <ClInclude Include="PixelShaderValue.h">
+      <Filter>Header Files\Sample\Model</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
